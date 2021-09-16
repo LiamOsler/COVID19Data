@@ -1,8 +1,6 @@
 ---
 title: "R Notebook"
-output:
-  html_document:
-    df_print: paged
+output: github_document
 ---
 
 
@@ -32,14 +30,14 @@ list.files("../../canadapopulation/")
 ```
 
 ```{r}
-(canadaPopulation <- read.csv("../../covid-19-data-master/public/data/vaccinations/country_data/Canada.csv"))
+canadaPopulation <- read.csv("../../covid-19-data-master/public/data/vaccinations/country_data/Canada.csv")
 
 ```
 
 
 Read in the csv file:
 ```{r}
-(canadaVaccination <- read.csv("../../covid-19-data-master/public/data/vaccinations/country_data/Canada.csv"))
+canadaVaccination <- read.csv("../../covid-19-data-master/public/data/vaccinations/country_data/Canada.csv")
 ```
 Convert the data to a data frame:
 ```{r}
@@ -49,7 +47,7 @@ canadaVaccination$date <- as.Date(canadaVaccination$date)
 The date column will now be in a "date" format:
 
 ```{r}
-canadaVaccination
+head(canadaVaccination)
 ```
 
 ```{r}
@@ -58,7 +56,7 @@ canadaVaccination$date[1]
 
 
 Plot the total vaccinations:
-```{r}
+```{r, eval = FALSE}
 
 library(plotly)
 canadaVaccination <- read.csv("../../covid-19-data-master/public/data/vaccinations/country_data/Canada.csv")

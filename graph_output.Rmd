@@ -6,7 +6,9 @@ output:
 ---
 <style type="text/css">
 .main-container {
-  max-width: 90%;
+  padding: 0;
+  margin: 0;
+  max-width: 100%;
   margin-left: auto;
   margin-right: auto;
 }
@@ -35,7 +37,8 @@ plot_ly(canadaVaccination, x = ~date, y = ~total_vaccinations, type = 'scatter',
   add_trace(y = ~people_vaccinated, name = 'People Vaccinated \n(1st or 2nd Dose)', mode = 'lines')%>% 
   add_trace(y = ~people_fully_vaccinated, name = 'People Fully Vaccinated \n(1st and 2nd Dose)', mode = 'lines')%>%
   layout(shapes = hline(38131104), plot_bgcolor = "#e5ecf6")%>%
-  add_text(showlegend = FALSE, x = c("2021-08-01"), y = c(36131104),
-           text = c("Population (38.1M)"))
+  add_text(showlegend = FALSE, x = c("2021-01-20"), y = c(41131104),
+           text = c("Population \n(38.1M)"))%>% 
+  layout(legend = list(x = 0.05, y = .1))
 
 ```
