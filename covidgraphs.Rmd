@@ -1,0 +1,67 @@
+---
+title: "R Notebook"
+output:
+  html_document:
+    df_print: paged
+---
+
+
+# Working with COVID-19 Data in R
+## Liam Osler 
+
+Clone the global COVID-19 Data from the github repository:
+
+```{bash, eval = FALSE}
+git clone https://github.com/owid/covid-19-data.git
+```
+Load the required R Libraries:
+```{r}
+library(ggplot2)
+library(lubridate)
+library(plotly)
+```
+
+
+Locate the Canadian Vaccination Data:
+```{r}
+list.files("../covid-19-data-master/public/data/vaccinations/country_data/")[35]
+```
+
+```{r}
+list.files("../canadapopulation/")
+```
+```{r}
+(canadaPopulation <- read.csv("../covid-19-data-master/public/data/vaccinations/country_data/Canada.csv"))
+
+```
+
+
+Read in the csv file:
+```{r}
+(canadaVaccination <- read.csv("../covid-19-data-master/public/data/vaccinations/country_data/Canada.csv"))
+```
+Convert the data to a data frame:
+```{r}
+canadaVaccination$date <- as.Date(canadaVaccination$date)
+```
+
+The date column will now be in a "date" format:
+
+```{r}
+canadaVaccination
+```
+
+Plot the total vaccinations:
+```{r}
+# plot air temp
+ggplot(canadaVaccination, aes(date, total_vaccinations))+
+  geom_line()+
+  scale_x_date(date_breaks = "1 month", date_labels =  "%b %Y") 
+          
+```
+
+```{r}
+plot_ly(canadaVaccination, x = ~date, y = ~total_vaccinations, type = 'scatter', mode = 'lines')
+```
+
+
