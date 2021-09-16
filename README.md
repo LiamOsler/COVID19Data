@@ -16,35 +16,8 @@ Load the required R Libraries:
 ``` r
 library(ggplot2)
 library(lubridate)
-```
-
-    ## 
-    ## Attaching package: 'lubridate'
-
-    ## The following objects are masked from 'package:base':
-    ## 
-    ##     date, intersect, setdiff, union
-
-``` r
 library(plotly)
 ```
-
-    ## Warning: package 'plotly' was built under R version 4.1.1
-
-    ## 
-    ## Attaching package: 'plotly'
-
-    ## The following object is masked from 'package:ggplot2':
-    ## 
-    ##     last_plot
-
-    ## The following object is masked from 'package:stats':
-    ## 
-    ##     filter
-
-    ## The following object is masked from 'package:graphics':
-    ## 
-    ##     layout
 
 Locate the Canadian Vaccination Data:
 
