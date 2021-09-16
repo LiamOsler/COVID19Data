@@ -28,17 +28,18 @@ list.files("../covid-19-data-master/public/data/vaccinations/country_data/")[35]
 ```
 
 ```{r}
-list.files("../canadapopulation/")
+list.files("../../canadapopulation/")
 ```
+
 ```{r}
-(canadaPopulation <- read.csv("../covid-19-data-master/public/data/vaccinations/country_data/Canada.csv"))
+(canadaPopulation <- read.csv("../../covid-19-data-master/public/data/vaccinations/country_data/Canada.csv"))
 
 ```
 
 
 Read in the csv file:
 ```{r}
-(canadaVaccination <- read.csv("../covid-19-data-master/public/data/vaccinations/country_data/Canada.csv"))
+(canadaVaccination <- read.csv("../../covid-19-data-master/public/data/vaccinations/country_data/Canada.csv"))
 ```
 Convert the data to a data frame:
 ```{r}
@@ -50,6 +51,11 @@ The date column will now be in a "date" format:
 ```{r}
 canadaVaccination
 ```
+
+```{r}
+
+```
+
 
 Plot the total vaccinations:
 ```{r}

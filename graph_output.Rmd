@@ -12,12 +12,20 @@ output:
 }
 </style>
 
+```{r}
+canadaPopulation <- read.csv("../../canadapopulation/canadapopulation.csv")
+```
+
+
 ```{r echo=FALSE, message=FALSE, warning=FALSE, out.width="100%"}
 
 library(plotly)
-canadaVaccination <- read.csv("../covid-19-data-master/public/data/vaccinations/country_data/Canada.csv")
+canadaVaccination <- read.csv("../../covid-19-data-master/public/data/vaccinations/country_data/Canada.csv")
 canadaVaccination$date <- as.Date(canadaVaccination$date)
 
 plot_ly(canadaVaccination, x = ~date, y = ~total_vaccinations, type = 'scatter', mode = 'lines', name = 'Total Doses')%>%
-          layout(title = 'Canada: Vaccinations', plot_bgcolor = "#e5ecf6", yaxis = list(title = 'Total Vaccinations'), xaxis = list(title = 'Date'))%>% add_trace(y = ~people_vaccinated, name = 'People Vaccinated \n(1st or 2nd Dose)', mode = 'lines')%>% add_trace(y = ~people_fully_vaccinated, name = 'People Fully Vaccinated \n(1st and 2nd Dose)', mode = 'lines') 
+  layout(title = 'Canada: Vaccinations', plot_bgcolor = "#e5ecf6", yaxis = list(title = 'Total Vaccinations'), xaxis = list(title = 'Date'))%>% 
+  add_trace(y = ~people_vaccinated, name = 'People Vaccinated \n(1st or 2nd Dose)', mode = 'lines')%>% 
+  add_trace(y = ~people_fully_vaccinated, name = 'People Fully Vaccinated \n(1st and 2nd Dose)', mode = 'lines') 
+
 ```
