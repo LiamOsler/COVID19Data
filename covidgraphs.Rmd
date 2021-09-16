@@ -53,7 +53,7 @@ canadaVaccination
 ```
 
 ```{r}
-
+canadaVaccination$date[1]
 ```
 
 
